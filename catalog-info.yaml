@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: xvdwjxhfs-python-gitops
+  description: This is GitOps manifest for xvdwjxhfs-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=xvdwjxhfs-python
+    backstage.io/kubernetes-id: xvdwjxhfs-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: xvdwjxhfs-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:xvdwjxhfs-python
